@@ -1,0 +1,35 @@
+﻿@model IEnumerable<HallenbergEducationFull.Models.CourseViewModel>;
+
+@{
+    ViewData["Title"] = "Kurskatalog";
+}
+
+<div>
+    <table class="table table-bordered" style="width:100%">
+        <thead>
+            <tr>
+                <th class="col-5">
+                    Kurs
+                </th>
+                <th class="col-5">
+                    Lärare
+                </th>
+                <th class="col-2">
+                    Tid/h
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+        <h1 class="text-primary ps-1">Kurser</h1>
+        @foreach (var kurs in Model)
+        {
+            <tr>
+                <td width:40%>@kurs.CourseName</td>
+                <td width:40%>@kurs.TeacherAlias</td>
+                <td width:20%>@kurs.Hours</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+
+</div>
